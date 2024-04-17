@@ -1,0 +1,12 @@
+.parent{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: fit-content;
+  padding-top: 10vh;
+}
+
+.btns{
+  width: 30vw;
+}

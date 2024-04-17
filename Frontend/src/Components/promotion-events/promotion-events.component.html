@@ -1,0 +1,44 @@
+<div
+  id="carouselExampleAutoplaying"
+  class="carousel slide"
+  data-bs-ride="carousel"
+  data-bs-interval="2000"
+>
+  <div class="carousel-inner">
+      
+      @for (item of events["PromotedEventsWithImgs"]; track $index) {
+        <div class="promotion-banner">
+          <span class="badge bg-success">-{{ item.event.promotion }}%</span>
+        </div>
+        
+        <!-- routerLink="eventdetails/{{item.event._id}}" -->
+        <div  class="carousel-item" [class.active]="flag">
+          <img 
+          src="data:image/jpg;base64,{{ item.imgBuffer }}"
+          class="d-block w-100"
+          />
+        </div>
+        <ng-container *ngIf="toggle()"></ng-container>
+        
+      }
+      
+    </div>
+    <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleAutoplaying"
+    data-bs-slide="next"
+  >
+    <span #next class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
